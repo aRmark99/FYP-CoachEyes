@@ -1,0 +1,11 @@
+npm install @tensorflow/tfjs@1.2.7
+npm install @tensorflow/tfjs-node@1.2.7
+npm install @tensorflow-models/posenet
+
+p5.js
+ml5.js
+
+
+yyyymmddhhmmss {
+	
+}

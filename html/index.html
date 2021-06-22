@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Connect css -->
+    <link rel="stylesheet" href="/css/headerAndFooter.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+    <!-- Connet js -->
+    <script type="text/javascript" language="javascript"></script>
+    <script type="text/javascript" src="../jslib/jquery-1.11.1.js"></script>
+    <title>Main Page</title>
+</head>
+<body>
+    <div id="header">
+        <div class="topMeun" id="topMeun">
+            <img src="../img/logo.png" alt="logo" id="logo">
+            <a class="active" href="index.html">Home</a>
+            <!-- login and register -->
+            <div class="topMeunR" id="topMeunR">
+                <a href="javascript:openRegisterForm()" id="animationAction">Register</a>
+                <a href="javascript:openForm()" id="animationAction">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="form-popup" id="myForm">
+        <form method="POST" class="form-container">
+            <h3><img src="../img/icons/usericon2.png" style="vertical-align: middle;" width="50px" /><span
+                    style="vertical-align: middle;">Login</span></h3>
+
+            <label for="email"><b>User ID:</b></label>
+            <input type="text" placeholder="Enter Email" id="email" name="email" required />
+
+            <label for="psw"><b>Password:</b></label>
+            <input type="password" placeholder="Enter Password" id="pw" name="pw" required />
+
+            <button type="button" class="btn" onclick="login()"><img src="../img/icons/confirmicon.png"
+                    style="vertical-align: middle;" width="60px" /> Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()"><img src="../img/icons/closeicon.png"
+                    style="vertical-align: middle;" width="50px" /> Close </button>
+        </form>
+    </div>
+    <!-- LOGIN END -->
+
+    <!-- RESGISTER -->
+    <div class="register-popup" id="ResForm">
+        <form id="rfs" method="POST" class="register-container">
+            <h3><img src="img/icons/regicon.jpg" style="vertical-align: middle;" width="50px" /><span
+                    style="vertical-align: middle;">Registration</h3>
+            <p style="width: 600px;margin: 0px auto; ">
+                <b>Email:</b>
+                <input style="width: 150px;" placeholder="Enter Your email" type="text" id="regemail" name="regemail"
+                    required>
+            </p>
+            <br />
+            <p style="width: 600px;margin: 0px auto; ">
+                <b>Name:</b>
+                <input style="width: 150px;" placeholder="Enter Your Name" type="text" id="regname" name="regname"
+                    required>
+            </p>
+            <br />
+            <p style="width: 600px;margin: 0px auto; ">
+                <b>Password:</b>
+                <input style="width: 180px; " type="password" placeholder="Enter Password" id="regpw" name="regpw"
+                    required>
+            </p>
+            <br />
+            <button type="button" class="btn" onclick="register()"><img src="img/icons/regicon2.png"
+                    style="vertical-align: middle;" width="17%" /><span style="vertical-align: middle;"></span></button>
+            <button type="button" class="btn cancel" id="crf" onclick="javascript:closeRegisterForm()"><img
+                    src="img/icons/closeicon.png" style="vertical-align: middle;" width="10%" /><span
+                    style="vertical-align: middle;"><br />Close</span></button>
+        </form>
+    </div>
+    <!-- REGISTER END -->
+    <div class="word">
+        <h1>Login to start testing your running performance</h1><br>
+        <h1>An example of a good running form</h1><br>
+        <img src="./img/runform.png">
+        <h2>Good running form tips</h2>
+        <ul><b>Head</b>
+        <li>Head should be in the middle of the body.</li>
+            <li>Head vertical movement should be as little as possible. </li> 
+                <li>Eye should be looking forward.</li>
+    </ul>
+    <ul>
+        <b>Shoulders</b>
+        <li>Relax shoulder.</li>
+    </ul>
+    <ul>
+        <b>Hands</b>
+        <li>Hands should not be crossing in front of the body.</li>
+        <li>Arms should swing (moving forward and backward).</li>
+        <li>Elbow should have a gentle bend.</li>
+    </ul>
+    <ul>
+        <b>Hips</b>
+        <li>Slightly forward</li>
+    </ul>
+    <ul>
+        <b>Feet</b>
+        <li>Land the foot under the body.</li>
+        <li>>Above 165 cadences.</li>
+    </ul>
+    </div>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+    <script type="text/javascript" src="../javascript/index.js"></script>
+    <script type="text/javascript" src="../javascript/result.js"></script>
+</body>
+
+</html>

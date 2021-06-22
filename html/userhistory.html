@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Connect css -->
+    <link rel="stylesheet" href="/css/headerAndFooter.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+    <!-- Connet js -->
+    <script type="text/javascript" language="javascript"></script>
+    <script type="text/javascript" src="../jslib/jquery-1.11.1.js"></script>
+    <title>Main Page</title>
+</head>
+
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
+<!-- <script type="text/javascript" src="../javascript/firebase.js"></script> -->
+<script type="text/javascript" src="../javascript/index.js"></script>
+<!-- p5 editor -->
+<script src="libraries/p5.min.js"></script>
+<script src="/libraries/p5.sound.min.js"></script>
+<script src="/libraries/quicksettings.js"></script>
+<script src="/libraries/p5.gui.js"></script>
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- posenet -->
+<script src="../javascript/result.js"></script>
+
+<body onload="gethistory()">
+    <div id="header">
+        <div class="topMeun" id="topMeun">
+            <img src="../img/logo.png" alt="logo" id="logo">
+            <a class="a" href="userhome.html">Home</a>
+            <a class="a" href="test.html">Test</a>
+            <a class="active" href="userhistory.html">History</a>
+            <!-- login and register -->
+            <div class="topMeunR" id="topMeunR">
+                <a href="javascript:logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class=centerdiv2>
+        <div id="historyselect">
+            <b>Select Date: </b>
+        </div>
+
+        <table id="historytable2" style="display: inline-block;">
+            <caption><b>Result</b></caption>
+            <tr>
+
+                <td>Headbounc:</td>
+                <td id="r1"></td>
+                <td>The lower the better</td>
+            </tr>
+            <tr>
+                <td>Hip in best postion:</td>
+                <td id="r2"></td>
+                <td>The larger the better</td>
+            </tr>
+            <tr>
+                <td>Head land feet:</td>
+                <td id="r3"></td>
+                <td>The larger the better</td>
+            </tr>
+            <tr>
+                <td>Cadences:</td>
+                <td id="r4"></td>
+                <td>Above 180 is great</td>
+            </tr>
+        </table>
+        <h1 id="totalgrade"></h1><br>
+        <div id="canvasplacement"></div>
+        <div id="btnplacement"></div>
+        <div id="centerdiv2">
+            <br><br>
+            <h1>The marking criteria</h1><br>
+            <ul><b>Headbounc</b>
+                <li>The headbounc 10% means that during the run your head bounc 10% (the lower the better)</li>
+                Tips: head should position at the middle of the shoulder 
+                <li></li>
+            </ul>
+            <ul><b>Hip in best postion</b>
+                <li>The socre 28/290 means in 290 pose your pose is best in 28 of them</li>
+                <li></li>
+            </ul>
+            <ul><b>Head land feet</b>
+                <li>The score 9 / 20 means that in 9 time out of 20 time of pose detected your feet is landed on the under the head postion</li>
+            </ul>
+            <ul><b>Cadences</b>
+                <li>The score 180 means that your step per minutes</li>
+            </ul>
+            <div class="container">
+            <table class="one">
+                <tr>
+                    <td>Headbounc</td>
+                    <td>Hip in best postion</td>
+                    <td>Head land feet</td>
+                    <td>Canences</td>
+                    <td>Grade</td>
+                </tr>
+                <tr>
+                    <td>Below 25</td>
+                    <td>Hip postion - Hip in best postion below 5</td>
+                    <td>Every step that under head below 5</td>
+                    <td>Above 180</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>26 ~ 49</td>
+                    <td>Hip postion - Hip in best postion below 100</td>
+                    <td>Every step that under head below 100</td>
+                    <td>160 ~ 179</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>Above 50</td>
+                    <td>Above 100</td>
+                    <td>Above 100</td>
+                    <td>Below 160</td>
+                    <td>C</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
